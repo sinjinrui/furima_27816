@@ -11,7 +11,7 @@
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |nickname|string|null: false|
-|birthday|date|null: false|
+|birthday|integer|null: false|
 |email|string|null: false|
 |password|string|null: false
 ### Association
@@ -21,7 +21,7 @@
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_name|string|null: false|
+|name|string|null: false|
 |explanation|text|null: false|
 |status_id|integer|null: false|
 |delivery_fee_id|integer|null: false|
@@ -32,7 +32,7 @@
 |category_id|integer|null: false|
 ### Association
 - belongs_to :user
-- belongs_to :purchase
+- has_one :purchase
 
 ## ordersテーブル
 |Column|Type|Options|
@@ -44,17 +44,15 @@
 |building_name|string||
 |tel|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
-- belongs_to :user
 - belongs_to :purchase
 
 ## purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|order_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |product_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :order
+- belongs_to :user
 - belongs_to :product
