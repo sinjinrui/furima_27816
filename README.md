@@ -46,7 +46,6 @@
 |product_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
-- belongs_to :purchase
 
 ## purchasesテーブル
 |Column|Type|Options|
