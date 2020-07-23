@@ -32,6 +32,7 @@
 |category_id|integer|null: false|
 ### Association
 - belongs_to :user
+- belongs_to :purchase
 
 ## ordersテーブル
 |Column|Type|Options|
@@ -47,8 +48,9 @@
 ### Association
 - belongs_to :product
 - belongs_to :user
+- belongs_to :purchase
 
-## transactionsテーブル
+## purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |order_id|integer|null: false, foreign_key: true|
