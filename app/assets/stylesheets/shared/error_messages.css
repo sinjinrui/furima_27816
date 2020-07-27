@@ -1,0 +1,14 @@
+.error-alert {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  width: 50%;
+  font-size: 1.1vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
