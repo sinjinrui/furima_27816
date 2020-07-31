@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :require_login, only: [:new]
 
   def index
+    @products = Product.all.order(id: "DESC")
   end
 
   def new
