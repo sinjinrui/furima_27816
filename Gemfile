@@ -62,6 +62,7 @@ gem 'devise-i18n-views'
 gem 'mini_magick'
 gem 'active_hash'
 gem 'pry-rails'
+gem "jquery-rails"
 
 group :production do
   gem 'rails_12factor'
