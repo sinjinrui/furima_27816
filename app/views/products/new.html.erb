@@ -103,8 +103,8 @@
     </div>
     <div class="caution">
       <p class="sentence">
-        <a href="#">禁止されている出品、</a>
-        <a href="#">行為</a>
+        <%= link_to "禁止されている出品", "#" %>
+        <%= link_to "行為", "#" %>
         を必ずご確認ください。
       </p>
       <p class="sentence">
@@ -114,7 +114,7 @@
       </p>
       <p class="sentence">
         また、出品をもちまして
-        <a href="#">加盟店規約</a>
+        <%= link_to "加盟店規約", "#" %>
         に同意したことになります。
       </p>
     </div>
@@ -127,9 +127,9 @@
 
   <footer class="items-sell-footer">
     <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">フリマ利用規約</a></li>
-      <li><a href="#">特定商取引に関する表記</a></li>
+      <li><%= link_to "プライバシーポリシー" %></li>
+      <li><%= link_to "フリマ利用規約" %></li>
+      <li><%= link_to "特定商取引に関する表記" %></li>
     </ul>
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
     <p class="inc">
