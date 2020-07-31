@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :require_login, only: [:new]
-
+  before_action :set_product, only: [:show]
+  
   def index
     @products = Product.all.order(id: "DESC")
   end
@@ -18,6 +19,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def product_params
@@ -31,5 +35,10 @@ class ProductsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+  
 
 end
