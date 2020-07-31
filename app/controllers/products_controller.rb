@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :require_login, only: [:new]
+  before_action :authenticate_user!, only: [:new]
   before_action :set_product, only: [:show, :edit, :update]
   before_action :move_to_index, only: [:edit]
   
@@ -41,12 +41,6 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :explanation, :status_id,
                                     :delivery_fee_id, :shipping_origin_id, :until_shipping_id,
                                     :price, :category_id, :image).merge(user_id: current_user.id)
-  end
-
-  def require_login
-    unless current_user
-      redirect_to new_user_session_path
-    end
   end
 
   def set_product
