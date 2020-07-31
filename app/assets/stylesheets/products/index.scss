@@ -309,3 +309,26 @@ a {
 }
 
 /* //商品一覧 */
+.purchase-btn {
+  width: 120px;
+  background-color: #3ccace;
+  border-radius: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 32px;
+  right: 32px;
+  padding: 10px 15px 15px 15px;
+  position: fixed;
+  &-text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 5px;
+  }
+  &-icon {
+    width: 60%;
+    margin: 0 20% 0 20%;
+  }
+}
