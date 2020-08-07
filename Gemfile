@@ -63,6 +63,8 @@ gem 'mini_magick'
 gem 'active_hash'
 gem 'pry-rails'
 gem "jquery-rails"
+gem 'payjp'
+gem 'haml-rails'
 
 group :production do
   gem 'rails_12factor'
