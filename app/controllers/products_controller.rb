@@ -45,7 +45,6 @@ class ProductsController < ApplicationController
   end
 
   def order
-    console.log(ENV["PAYJP_SECRET_KEY"])
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: @product.price,
