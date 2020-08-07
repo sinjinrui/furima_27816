@@ -116,7 +116,7 @@
         <%= link_to product_path(product.id) do %>
         <div class='item-img-content'>
           <%= image_tag(rails_blob_path(product.image), class:"item-img") %>
-          <% if !product.image %>
+          <% if product.order != nil %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>

@@ -23,5 +23,6 @@ class Product < ApplicationRecord
   belongs_to_active_hash :shipping_origin
   belongs_to_active_hash :until_shipping
   belongs_to_active_hash :category
+  has_one :order
 
 end
