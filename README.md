@@ -1,57 +1,59 @@
 # README
 
-# furima_27816 DB設計
-## 購入時データ（カード番号・有効期限・CVC）はPay.jpトークンで生成
+# フリマアプリ
+フリーマーケット機能を持ったwebアプリケーション  
 
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|first_name_kana|string|null: false|
-|last_name_kana|string|null: false|
-|nickname|string|null: false|
-|birthday|integer|null: false|
-|email|string|null: false|
-|password|string|null: false
-### Association
-- has_many :products
-- has_many :orders
+# URL
+https://furima-27816.herokuapp.com/  
 
-## productsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|explanation|text|null: false|
-|status_id|integer|null: false|
-|delivery_fee_id|integer|null: false|
-|shipping_origin_id|integer|null: false|
-|until_shipping_id|integer|null: false|
-|price|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|category_id|integer|null: false|
-### Association
-- belongs_to :user
-- has_one :purchase
+# Basic認証
+id = admin  
+password = 2222  
 
-## ordersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|postal_code|string|null: false|
-|prefecture_id|integer|null: false|
-|city|string|null: false|
-|address|string|null: false|
-|building_name|string||
-|tel|string|null: false|
-|product_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :product
+# 出品者アカウント
+メールアドレス = p@p  
+パスワード = ppp111  
 
-## purchasesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|product_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :product
+# 購入者アカウント
+メールアドレス = buy@buy  
+パスワード = buy111  
+
+# 購入用カード情報
+番号 = 4242424242424242  
+期限 = 今より未来  
+セキュリティコード = 123  
+
+# DEMO
+[![Image from Gyazo](https://i.gyazo.com/d29e480fc71e1a5e91f61db110f9d519.gif)](https://gyazo.com/d29e480fc71e1a5e91f61db110f9d519)  
+
+# 機能一覧
+・サインアップ・ログイン・ログアウト機能  
+・商品出品・編集・削除機能  
+・商品購入機能（クレジット決済）  
+
+# 開発環境
+・Haml  
+・SCSS  
+・Ruby  
+・Ruby on Rails  
+・javascript  
+・Jquery  
+・Rspec   
+・GitHub  
+・Mysql  
+・heroku  
+
+# ローカル動作方法
+
+## バージョン
+
+Ruby 2.6.5  
+Ruby on Rails 6.0.3.2  
+
+## 動作までのコマンド
+git clone  https://github.com/sinjinrui/furima_27816.git
+bundle install  
+yarn install  
+rails db:create  
+rails db:migrate  
+rails s  
